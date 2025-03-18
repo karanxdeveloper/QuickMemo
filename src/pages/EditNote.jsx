@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa6";
 import { useState } from "react";
 import useCreateDate from "../hooks/useCreateDate";
+import Swal from "sweetalert2";
 
 function EditNote({notes,setNotes}) {
 
@@ -30,11 +31,32 @@ function EditNote({notes,setNotes}) {
   }
 
   const handleDelete = () =>{
-    const newNotes = notes.filter((item)=>{
-     return item.id != id;
-    })
-    setNotes(newNotes)
-    navigate("/")
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+        const newNotes = notes.filter((item)=>{
+          return item.id != id;
+         })
+         setNotes(newNotes)
+         navigate("/")
+      }
+    });
+
+
+
+    
   }
   
   return (

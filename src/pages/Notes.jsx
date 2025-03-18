@@ -32,6 +32,8 @@ function Notes({notes}) {
         </header>
 
         <div className="flex flex-wrap justify-center p-2 gap-3 ">
+          {filterNotes.length == 0 && <p>No notes found</p>}
+        
           {
             filterNotes.map((note) => {
               return <NoteItem key={note.id} note={note}/>
