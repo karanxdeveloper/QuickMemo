@@ -9,15 +9,19 @@ import { useEffect, useState } from 'react'
 
 
 function App() {
-  const [notes,setNotes] = useState( [])
+  const [notes,setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || [])
   console.log(notes);
+
+  useEffect(()=>{
+    localStorage.setItem("notes",JSON.stringify(notes))
+  },[notes])
 
   return (
     <>
       <Routes>
         <Route path='/' element={<Notes notes={notes}/>}/>
         <Route path='/create' element={<CreateNote setNotes={setNotes}/>}/>
-        <Route path='/edit/:id' element={<EditNote/>}/>
+        <Route path='/edit/:id' element={<EditNote notes={notes} setNotes={setNotes}/>}/>
       </Routes>
     </>
   )

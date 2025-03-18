@@ -13,7 +13,7 @@ function Notes({notes}) {
           <button className="bg-gray-600 border text-white p-2.5 rounded-md"><FaSearch /></button>
         </header>
 
-        <div className="container flex flex-wrap p-2 gap-3">
+        <div className="container flex flex-wrap justify-center p-2 gap-3">
           {
             notes.map((note) => {
               return <NoteItem key={note.id} note={note}/>
