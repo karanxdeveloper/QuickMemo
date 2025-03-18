@@ -1,10 +1,9 @@
 import { FaSearch } from "react-icons/fa";
-import notes from "../dummy";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import NoteItem from "../components/NoteItem";
 
-function Notes() {
+function Notes({notes}) {
   return (
     <>
       <section className="bg-black h-[100vh] text-white relative">
