@@ -38,7 +38,9 @@ function EditNote({notes,setNotes}) {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonText: "Yes, delete it!",
+      customClass: {
+    popup: "custom-swal-popup"}
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
