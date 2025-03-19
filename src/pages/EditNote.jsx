@@ -61,15 +61,15 @@ function EditNote({notes,setNotes}) {
   
   return (
     <>
-      <section className="text-white p-3 bg-black h-[100vh]">
+      <section className="text-white p-3 bg-[#1b1d30] h-[100vh]">
         <header className="flex justify-around h-[5%] ">
-          <Link className="p-3 text-2xl flex justify-center items-center bg-gray-500 text-center rounded-md" to={"/"}><FaArrowLeft /></Link>
-          <button onClick={handleSave} className="btn text-2xl p-3 rounded-md flex justify-center items-center bg-gray-500">Save</button>
-          <button onClick={handleDelete} className="btn text-2xl p-3 rounded-md flex justify-center items-center bg-gray-500"><FaTrash /></button>
+          <Link className="p-3 text-2xl flex justify-center items-center bg-gray-700 text-center rounded-md brightness-150 inset-shadow-sm inset-shadow-gray-500/50" to={"/"}><FaArrowLeft /></Link>
+          <button onClick={handleSave} className="btn text-2xl p-3 rounded-md flex justify-center items-center bg-gray-700 brightness-150 inset-shadow-sm inset-shadow-gray-500/50">Save</button>
+          <button onClick={handleDelete} className="btn text-2xl p-3 rounded-md flex justify-center items-center bg-gray-700 brightness-150 inset-shadow-sm inset-shadow-gray-500/50"><FaTrash /></button>
         </header>
-        <form className="create flex flex-col h-[95%] bg-blue-800 mt-2">
-            <input onChange={(e)=>{setTitle(e.target.value)}} value={title} className="p-3 text-2xl outline-none h-[5%] bg-purple-600" type="text" placeholder="Title..." autoFocus />
-            <textarea onChange={(e)=>{setDetails(e.target.value)}} value={details} className="p-3 text-2xl outline-none h-[95%] bg-gray-400" placeholder="Details..."></textarea>
+        <form className="create flex flex-col h-[95%] gap-[2px] mt-2">
+            <input onChange={(e)=>{setTitle(e.target.value)}} value={title} className="inset-shadow-sm inset-shadow-gray-500/50 p-3 text-2xl brightness-150 outline-none h-[5%] bg-gray-700 rounded-xl" type="text" placeholder="Title..." autoFocus />
+            <textarea onChange={(e)=>{setDetails(e.target.value)}} value={details} className="inset-shadow-sm inset-shadow-gray-500/50 p-3 text-2xl outline-none h-[95%] bg-gray-600 rounded-xl" placeholder="Details..."></textarea>
         </form>
       </section>
     </>

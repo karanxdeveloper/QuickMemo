@@ -28,7 +28,7 @@ function Notes({notes}) {
         <header className="flex justify-around p-2">
          {!showSearch ? <h2 className="text-3xl font-bold ">QuickMemo</h2> :
           <input value={text} onChange={(e) => {setText(e.target.value);}} className="border rounded-md px-1" type="text" autoFocus placeholder='keyword...' />}
-          <button onClick={()=>setShowSearch(!showSearch)} className="bg-gray-600 border text-white p-2.5 rounded-md">{showSearch ? <IoCloseSharp />  : <FaSearch />}</button>
+          <button onClick={()=>setShowSearch(!showSearch)} className="brightness-150 bg-gray-700 outline-none  text-white p-2.5 rounded-md inset-shadow-sm inset-shadow-gray-500/50">{showSearch ? <IoCloseSharp />  : <FaSearch />}</button>
         </header>
 
         <div className="flex flex-wrap justify-center p-2 gap-3 ">
@@ -40,7 +40,7 @@ function Notes({notes}) {
             })
           }
         </div>
-        <Link to={"/create"} className="p-4 text-3xl rounded-md fixed bottom-2 right-2 bg-gray-600"><FaPlus /></Link>
+        <Link to={"/create"} className="animate-bounce p-4 text-3xl rounded-md fixed bottom-2 right-2 bg-gray-700 inset-shadow-sm inset-shadow-gray-500/50 brightness-150"><FaPlus /></Link>
       </section>
     </>
   )
