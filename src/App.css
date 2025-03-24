@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(3, 6, 26, 0.904);
+    background: linear-gradient(to bottom, #0d3875, #0b0f16);
 }
 
 .custom-swal-popup {
